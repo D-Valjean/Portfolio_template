@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="#intro">Inicio</a></li>
+					<li><a href="#one">Sobre Mi</a></li>
+					<li><a href="#two">Mis Proyectos</a></li>
+					<li><a href="#three">Contactame: </a></li>
+				</ul>
+			</nav>
+			</div>
+		</section>
+
+	<!-- Wrapper -->
+		<div id="wrapper">
+			{% include "portfolio/intro.html" %}
+			{% include "portfolio/one.html" %}
+			{% include "portfolio/two.html" %}
+			{% include "portfolio/three.html" %}
+		</div>
+
+
+{% endblock content %}

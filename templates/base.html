@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+{% load static %}
+<!--
+	Portafilio = ""
+	Tecnologias:
+		- HTML5 | Python | Bootstrap 5 | Javascript | Jquery | CSS | Sass | GitHub | Django
+-->
+<html>
+	<head>
+		<title>{{title}}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		{% include "header.html" %}
+        {% block content %}{% endblock content %}
+        {% include "footer.html" %}
+        {% include "scripts.html" %}
+	</body>
+</html>

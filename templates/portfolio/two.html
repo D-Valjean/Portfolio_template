@@ -1,0 +1,39 @@
+{% load static %}
+<!-- One -->
+<section id="two" class="wrapper style2 spotlights">
+    {% for p in all_projects %}
+    <section>
+        {% if forloop.first %}
+            <a href="{{ p.url }}" class="image fit"><img src="{{ p.img.url }}" alt="" data-position="center" /></a>
+            <div class="content">
+                <div class="inner">
+                    <h2>{{ p.title }}</h2>
+                    <p>{{ p.description }}</p>
+                    <h4>Tecnologias Empleadas : </h4>
+                    <ul class="actions">
+                        {% for t in p.used.all  %}
+                            <strong><i style="color:#27da72 ; font-size: 15px;" >#{{ t.tech }}</i></strong>{% if not forloop.last %}&nbsp;{% endif %}
+                        {% endfor %}
+                    </ul>
+                    <strong><li><a style="font-size: 20px" href="{{ p.url }}">Enlace de pagina</a></li></strong>
+                </div>
+            </div>
+        {% else %}
+            <div class="content">
+                <div class="inner">
+                    <h2>{{ p.title }}</h2>
+                    <p>{{ p.description }}</p>
+                    <h4>Tecnologias Empleadas : </h4>
+                    <ul class="actions">
+                        {% for t in p.used.all  %}
+                            <strong><i style="color:#27da72 ; font-size: 15px;" >#{{ t.tech }}</i></strong>{% if not forloop.last %}&nbsp;{% endif %}
+                        {% endfor %}
+                    </ul>
+                    <strong><li><a style="font-size: 20px" href="{{ p.url }}">Enlace de pagina</a></li></strong>
+                </div>
+            </div>
+            <a href="{{ p.url }}" class="image fit"><img src="{{ p.img.url }}" alt="" data-position="right center" /></a>
+        {% endif %}
+    </section>
+    {% endfor %}
+</section>
